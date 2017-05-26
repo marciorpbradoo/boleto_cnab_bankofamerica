@@ -198,6 +198,8 @@ class BoletoBankOfAmerica(Boleto):
         Boleto.__init__(self, move_line, nosso_numero)
         self.boleto.nosso_numero = self.nosso_numero
         self.boleto.valor = 0.0  # Não preencher
+        print "document.py"
+        print self.nosso_numero
 
 
 class BoletoCaixa(Boleto):

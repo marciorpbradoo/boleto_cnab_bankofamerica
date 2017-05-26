@@ -32,8 +32,9 @@ class BoletoBankOfAmerica(BoletoData):
         self.local_pagamento = 'PAGAVEL EM QUALQUER BANCO ATE O VENCIMENTO'
 
     def format_nosso_numero(self):
+        print "passou format_nosso_numero"
         return "%s" % (
-            str(self.nosso_numero[1:]) + "024"
+            str(self.nosso_numero[1:len(self.nosso_numero)-1] + "024")
         )
 
 
@@ -47,7 +48,7 @@ class BoletoBankOfAmerica(BoletoData):
             dv = 0
         else:
             dv = digito
-        return dv
+        return ''
 
     @property
     def campo_livre(self):
@@ -57,5 +58,6 @@ class BoletoBankOfAmerica(BoletoData):
 #             self.nosso_numero.zfill(11),
 #             self.conta_cedente.split('-')[0],
 #             )
-        content = "000349026921" + self.nosso_numero[1:] + "024"
+        print self.nosso_numero
+        content = "000349026921" + self.nosso_numero[1:-1] + "024"
         return content

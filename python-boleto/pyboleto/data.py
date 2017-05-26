@@ -219,7 +219,6 @@ class BoletoData(object):
                                       due_date_days,
                                       Decimal(self.valor_documento) * 100,
                                       self.campo_livre)
-        print self.campo_livre
 
         dv = self.calculate_dv_barcode(num)
 
@@ -228,8 +227,6 @@ class BoletoData(object):
             raise BoletoException(
                 'The barcode must have 44 characteres, found %d' %
                 len(barcode))
-        print "barcode"
-        print barcode
         return barcode
 
     @property
@@ -444,8 +441,6 @@ class BoletoData(object):
 
         linha = self.barcode
         
-        print "linha_digitavel"
-        print linha
 
         if not linha:
             raise BoletoException(u"Boleto doesn't have a barcode")

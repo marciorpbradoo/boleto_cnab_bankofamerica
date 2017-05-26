@@ -757,8 +757,6 @@ class BoletoPDF(object):
             y + 2 * self.space,
             boleto_dados.linha_digitavel
         )
-        print "boleto_dados.linha_digitavel"
-        print boleto_dados.linha_digitavel
         # Codigo de barras
         self._codigoBarraI25(boleto_dados.barcode, 2 * self.space, 0)
 
